@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sign In{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<div class="login-wrapper">
+    <img src="{{ asset('images/HEELS.png') }}" style="display:block;margin:0 auto 2em auto;max-width:120px;">
+    <h2>Sign In</h2>
+    <form method="post" class="login-form">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="_username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="_email" required style="width:100%;padding:0.5em;border:1px solid #4C0F2E;border-radius:4px;font-size:1em;color:#2D161E;background:#fff;">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="_password" required>
+        </div>
+        <button type="submit">Sign In</button>
+    </form>
+</div>
+<style>
+    .login-wrapper {
+        margin: 2em auto;
+        max-width: 400px;
+        padding: 2em;
+        background: #2D161E;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(44,15,46,0.1);
+        color: #fff;
+    }
+    .login-wrapper h2 {
+        color: #f4f2f3;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    .login-form .form-group {
+        margin-bottom: 1.5em;
+    }
+    .login-form label {
+        display: block;
+        margin-bottom: 0.5em;
+        color: #f7f3f5;
+        font-weight: bold;
+    }
+    .login-form input {
+        width: 100%;
+        padding: 0.5em;
+        border: 1px solid #4C0F2E;
+        border-radius: 4px;
+        font-size: 1em;
+        color: #2D161E;
+        background: #fff;
+    }
+    .login-form button {
+        width: 100%;
+        padding: 0.75em;
+        background: #4C0F2E;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 1em;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.2s;
+    }
+    .login-form button:hover {
+        background: #2D161E;
+    }
+</style>
+{% endblock %}
+
+

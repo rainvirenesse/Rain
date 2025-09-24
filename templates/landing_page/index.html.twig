@@ -1,0 +1,344 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rain Virenesse | Elevate Every Step{% endblock %}
+
+{% block body %}
+<style>
+   
+    <style>
+        body {
+            background: #F5EDE9;
+            font-family: Arial, 'Arial Unicode MS', sans-serif;
+            color: #1A1A1A;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            width: 100%;
+            background: #8B1C55;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2em 2em;
+            box-shadow: 0 2px 8px rgba(139,28,85,0.07);
+            border-bottom: 2px solid #C9A646;
+        }
+        .navbar-logo {
+            font-size: 2em;
+            font-weight: 700;
+            color: #C9A646;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+        .navbar-menu {
+            display: flex;
+            gap: 2em;
+        }
+        .navbar-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 0.5em 1em;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .navbar-menu a:hover {
+            background: #C9A646;
+            color: #8B1C55;
+        }
+        .hero-section {
+            width: 100%;
+            background: #8B1C55;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4em 2em 3em 2em;
+            position: relative;
+            min-height: 480px;
+        }
+        .hero-img {
+            max-width: 420px;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(139,28,85,0.15);
+            margin-right: 3em;
+            background: #fff;
+        }
+        .hero-content {
+            max-width: 500px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .hero-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+            letter-spacing: 2px;
+            color: #C9A646;
+            font-family: Arial, 'Arial Unicode MS', sans-serif;
+        }
+        .hero-btn {
+            background: #C9A646;
+            color: #8B1C55;
+            border: none;
+            border-radius: 8px;
+            padding: 1em 2.5em;
+            font-size: 1.2em;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 1.5em;
+            box-shadow: 0 2px 8px rgba(201,166,70,0.10);
+            transition: background 0.2s;
+        }
+        .hero-btn:hover {
+            background: #fff;
+            color: #8B1C55;
+        }
+        .section-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: #8B1C55;
+            margin-bottom: 1em;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .hot-picks {
+            display: flex;
+            gap: 2em;
+            justify-content: center;
+            margin-bottom: 3em;
+        }
+        .collection-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(139,28,85,0.07);
+            padding: 2em 1.5em;
+            width: 220px;
+            text-align: center;
+            border: 2px solid #8B1C55;
+        }
+        .collection-card h3 {
+            color: #8B1C55;
+            font-size: 1.2em;
+            margin-bottom: 0.7em;
+            font-weight: 700;
+        }
+        .collection-btn {
+            background: #8B1C55;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.7em 1.5em;
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 1em;
+            box-shadow: 0 2px 8px rgba(139,28,85,0.10);
+            transition: background 0.2s;
+        }
+        .collection-btn:hover {
+            background: #C9A646;
+            color: #8B1C55;
+        }
+        .minimal-section {
+            background: #F5EDE9;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(139,28,85,0.07);
+            padding: 2em 1em;
+            margin: 0 auto 3em auto;
+            max-width: 900px;
+            text-align: center;
+            border: 2px solid #8B1C55;
+        }
+        .minimal-title {
+            color: #8B1C55;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
+        .minimal-tagline {
+            color: #1A1A1A;
+            font-size: 1.1em;
+            margin-bottom: 1em;
+        }
+        .featured-section {
+            max-width: 1100px;
+            margin: 0 auto 3em auto;
+            padding: 2em 1em;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(139,28,85,0.07);
+            border: 2px solid #8B1C55;
+            text-align: center;
+        }
+        .featured-title {
+            color: #8B1C55;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 1em;
+        }
+        .featured-gallery {
+            display: flex;
+            gap: 2em;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .featured-card {
+            background: #F5EDE9;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(139,28,85,0.07);
+            padding: 1em;
+            width: 180px;
+            text-align: center;
+            border: 1px solid #C9A646;
+        }
+        .featured-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 0.7em;
+            background: #fff;
+        }
+        .featured-card h3 {
+            color: #8B1C55;
+            font-size: 1.1em;
+            margin-bottom: 0.3em;
+        }
+        .featured-card p {
+            color: #1A1A1A;
+            font-size: 0.95em;
+            margin-bottom: 0.5em;
+        }
+        .footer {
+            background: #1A1A1A;
+            color: #fff;
+            padding: 2em 0 1em 0;
+            text-align: center;
+            border-top: 2px solid #8B1C55;
+            margin-top: 3em;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+            margin-bottom: 1em;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 0.5em 1em;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .footer-links a:hover {
+            background: #8B1C55;
+            color: #fff;
+        }
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5em;
+            margin-bottom: 1em;
+        }
+        .footer-social a {
+            color: #C9A646;
+            font-size: 1.5em;
+            transition: color 0.2s;
+        }
+        .footer-social a:hover {
+            color: #8B1C55;
+        }
+        .footer-tagline {
+            color: #C9A646;
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-top: 1em;
+            letter-spacing: 1px;
+        }
+    </style>
+
+    <div class="navbar">
+        <a href="#" class="navbar-logo">Rain Virenesse</a>
+        <div class="navbar-menu">
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <section class="hero-section">
+        <img src="{{ asset('images/model.png') }}" alt="Lady in Silk Magenta Outfit" class="hero-img">
+        <div class="hero-content">
+            <div class="hero-title">Elevate Every Step</div>
+            <a href="#" class="hero-btn">Shop Collection</a>
+        </div>
+    </section>
+
+    <div class="section-title">Hot Picks This Season</div>
+    <div class="hot-picks">
+        <div class="collection-card">
+            <h3>Classic Elegance</h3>
+            <a href="#" class="collection-btn">Shop Now</a>
+        </div>
+        <div class="collection-card">
+            <h3>Trendy Styles</h3>
+            <a href="#" class="collection-btn">Shop Now</a>
+        </div>
+        <div class="collection-card">
+            <h3>Limited Editions</h3>
+            <a href="#" class="collection-btn">Shop Now</a>
+        </div>
+    </div>
+
+    <section class="minimal-section">
+        <div class="minimal-title">Best Minimal Collection</div>
+        <div class="minimal-tagline">Minimal Yet Powerful</div>
+    </section>
+
+    <section class="featured-section">
+        <div class="featured-title">Featured Heels of the Week</div>
+        <div class="featured-gallery">
+            <div class="featured-card">
+                <img src="{{ asset('images/model.png') }}" alt="Featured Heel 1"/>
+                <h3>Magenta Silk Heel</h3>
+                <p>Elegant, bold, and comfortable.</p>
+            </div>
+            <div class="featured-card">
+                <img src="{{ asset('images/model.png') }}" alt="Featured Heel 2"/>
+                <h3>Golden Accent Heel</h3>
+                <p>Luxury meets sophistication.</p>
+            </div>
+            <div class="featured-card">
+                <img src="{{ asset('images/HEELS.png') }}" alt="Featured Heel 3"/>
+                <h3>Minimalist Charcoal Heel</h3>
+                <p>Powerful style, pure comfort.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="footer-social">
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i> IG</a>
+            <a href="#" title="TikTok"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="#" title="Facebook"><i class="fab fa-facebook"></i> FB</a>
+            <a href="#" title="Pinterest"><i class="fab fa-pinterest"></i> Pinterest</a>
+        </div>
+        <div class="footer-tagline">Rain Virenesse Footwear – Confidence in Every Step</div>
+    </footer>
+    {% endblock %}
+       
